@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>box type</title>
+	<style type="text/css">
+		body
+		{
+			margin:0;
+			padding:0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+			background: #060c21;
+			font-family: 'poppins',sans-serif; 
+		}
+		.container
+		{
+			position: relative;
+			width: 80%;
+			display:grid;
+			grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+			grid-template-rows: auto;
+			grid-gap: 0 250px;
+		}
+
+		.container .box
+		{
+			position: relative;
+			height: 500px;
+			background: #060c21;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border:1px solid #0000;
+
+		}
+
+		.container .box:before
+		{
+			content: '';
+			position: absolute;
+			top:-2px;
+			left:-2px;
+			right: -2px;
+			bottom: -2px;
+			background: #fff;
+			transform: skew(3deg,3deg);
+			z-index: -1;
+		}
+		.container .box:nth-child(1):before
+		{
+			background: linear-gradient(315deg,#ff0057,#e64a19);
+		}
+
+        .container .box:nth-child(2):before
+		{
+			background: linear-gradient(315deg,#89ff00,#00bcd4);
+		}
+
+		.container .box:after
+		{
+			content:'';
+			position:absolute;
+			top:0;
+			left: 0;
+			width: 50%;
+			height: 100%;
+			background: rgba(255,255,255,0.05);
+		}
+		.content
+		{
+			position: relative;
+			padding: 20px;
+			color: white;
+			transform: translateY(40px);
+		}
+
+		.content h2
+		{
+			position: absolute;
+			top:-60px;
+			right:20px;
+			margin: 0;
+			padding: 0;
+			font-size: 10em;
+			color: rgba(255,255,255,0.05);
+			transition: 0.5s;
+		}
+
+		.box:hover .content h2
+		{
+			top:-140px;
+		}
+
+		.box .content h3
+		{
+			margin: 0 0 10px;
+			padding: 0;
+			font-size: 26px;
+			font-weight: 1000;
+			color: #fff;
+		}
+
+		.box .content p
+		{
+			margin: 0;
+			padding: 0;
+			color: #fff;
+			font-size: 16px;
+		}
+
+		.box .content a
+		{
+			margin: 20px 0 0;
+			padding: 10px 20px;
+			margin-left: 100px;
+			margin-top: 50px;
+			border:1px solid #fff;
+			display: inline-block;
+			color: #fff;
+			transition: 1s;
+			transform: translateY(-40px);
+			opacity: 0;
+			visibility: hidden;
+			text-decoration: none;
+		}
+		.box:hover .content a
+		{
+
+			transform: translateY(0);
+			opacity: 1;
+			visibility:visible;
+		}
+
+		.box .content a:hover
+		{
+			color: #000;
+			background: #fff;
+
+		}
+		.img {
+			align-items: right;
+			position: absolute;
+			left: 500px;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="box">
+			<div class="content">
+				<h2>01</h2>
+				<h3>House Price Prediction</h3>
+				<p>The main feature of the algorithm is to analyse the given
+				 data set to predict the market price of the houses for the future</p>
+				<a href="hpp.html"> Predict</a>
+			</div>
+			<div class="img">
+			<a><img src="/static/house_front.png"></a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
